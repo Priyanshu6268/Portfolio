@@ -1,6 +1,6 @@
 # Priyanshu Kumar Saw - Portfolio Website
 
-Welcome to my portfolio website! This site showcases my skills, projects, and achievements. It's built using modern web technologies including HTML5, CSS3, JavaScript, and jQuery.
+Welcome to my portfolio website! This site showcases my skills, projects, and achievements. It's built using modern web technologies including HTML5, CSS3, JavaScript.
 
 ## 🌐 Live Demo
 Check out the live website here: [Portfolio Website](https://priyanshu6268.github.io/Portfolio/)
