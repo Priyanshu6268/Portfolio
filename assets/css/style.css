@@ -1143,8 +1143,8 @@ header .navbar ul li a:hover {
 }
 
 .pdf-embed {
-  width: 700px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   margin: 0 15px; /* Adjust this margin value as needed */
 }
 
