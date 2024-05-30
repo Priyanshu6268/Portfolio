@@ -184,6 +184,11 @@ header .navbar ul li a:hover {
 }
 /* hamburger icon ends */
 
+.fa-p {
+  font-size: 24px; /* Adjust size as needed */
+  vertical-align: middle;
+  margin-right: 8px; /* Space between icon and text */
+}
 /* hero section starts*/
 .home {
   position: relative;
@@ -1138,7 +1143,7 @@ header .navbar ul li a:hover {
 }
 
 .pdf-embed {
-  width: 500px;
+  width: 700px;
   height: 300px;
   margin: 0 15px; /* Adjust this margin value as needed */
 }
