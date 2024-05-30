@@ -1130,8 +1130,18 @@ header .navbar ul li a:hover {
   }
   /* achievements  media queries ends*/
   /* achievements  section ends */
-  
-  
+
+.pdf-container .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pdf-embed {
+  width: 300px;
+  height: 400px;
+  margin: 0 10px; /* Adjust this margin value as needed */
+}
 
 /* contact section starts */
 .contact {
