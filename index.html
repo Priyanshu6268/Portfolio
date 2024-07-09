@@ -522,8 +522,10 @@
 </div>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
     .content-container {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Raleway', sans-serif;
         padding: 30px;
         background: linear-gradient(145deg, #e0e0e0, #ffffff);
         border-radius: 15px;
@@ -538,6 +540,11 @@
         margin-bottom: 15px;
         text-transform: uppercase;
         letter-spacing: 1.2px;
+        transition: color 0.3s, transform 0.3s;
+    }
+    .hackathon-info h2:hover, .project-highlight h3:hover {
+        color: #004d40;
+        transform: scale(1.05);
     }
     .hackathon-info ul {
         list-style: none;
@@ -551,6 +558,11 @@
         font-weight: bold;
         display: flex;
         align-items: center;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .hackathon-info ul li:hover {
+        background: #80cbc4;
+        transform: translateX(10px);
     }
     .hackathon-info ul li::before {
         content: "✔️";
@@ -570,15 +582,21 @@
         font-weight: bold;
         color: #2e7d32;
         margin-bottom: 15px;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .project-highlight p:hover {
+        background: #a5d6a7;
+        transform: translateY(-5px);
     }
     a {
         color: #00796b;
         text-decoration: none;
         font-weight: bold;
-        transition: color 0.3s;
+        transition: color 0.3s, transform 0.3s;
     }
     a:hover {
         color: #004d40;
+        transform: scale(1.1);
     }
 </style>
 
