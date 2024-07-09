@@ -1223,6 +1223,64 @@ header .navbar ul li a:hover {
 
   /* achievements  section ends */
 
+/* research */
+
+
+    .publications {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+    }
+
+    .publications .heading {
+        text-align: center;
+        font-size: 2em;
+        color: #00796b;
+        margin-bottom: 20px;
+    }
+
+    .publication {
+        margin-bottom: 30px;
+    }
+
+    .publication-item {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .publication-item h2 {
+        font-size: 24px;
+        color: #00796b;
+        margin-bottom: 10px;
+    }
+
+    .publication-item p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .publication-item a {
+        color: #00796b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .publication-item a:hover {
+        color: #004d40;
+    }
+
+
+
+ /* research */
+
 .pdf-container .row {
   display: flex;
   justify-content: space-between;
