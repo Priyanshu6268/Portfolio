@@ -1135,6 +1135,92 @@ header .navbar ul li a:hover {
   }
   }
   /* achievements  media queries ends*/
+       
+    .special-section {
+        font-family: 'Poppins', sans-serif;
+        padding: 30px;
+        background: linear-gradient(145deg, #e0e0e0, #ffffff);
+        border-radius: 15px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .special-section .content {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .special-section .hackathon-info h2,
+    .special-section .project-highlight h3 {
+        color: #00796b;
+        margin-bottom: 15px;
+        letter-spacing: 1.2px;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .special-section .hackathon-info h2:hover,
+    .special-section .project-highlight h3:hover {
+        color: #004d40;
+        transform: scale(1.05);
+    }
+
+    .special-section .hackathon-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .special-section .hackathon-info ul li {
+        background: #b2dfdb;
+        margin-bottom: 10px;
+        padding: 12px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .special-section .hackathon-info ul li:hover {
+        background: #80cbc4;
+        transform: translateX(10px);
+    }
+
+    .special-section .hackathon-info ul li::before {
+        content: "✔️";
+        margin-right: 10px;
+        color: #004d40;
+    }
+
+    .special-section .project-highlight {
+        margin-top: 25px;
+    }
+
+    .special-section .achievement {
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 15px;
+        transition: transform 0.3s;
+    }
+
+    .special-section .achievement:hover {
+        transform: scale(1.05);
+    }
+
+    .special-section a {
+        color: #00796b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .special-section a:hover {
+        color: #004d40;
+        transform: scale(1.1);
+    }
+
+
   /* achievements  section ends */
 
 .pdf-container .row {
