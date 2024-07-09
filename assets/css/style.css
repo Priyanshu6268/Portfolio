@@ -1237,18 +1237,19 @@ header .navbar ul li a:hover {
 
     .publications .heading {
         text-align: center;
-        font-size: 3.5em;
+        font-size: 4.5em;
         color: #00796b;
         margin-bottom: 20px;
     }
 
     .publication {
         width: 100%;
-        padding: 20px;
+        padding: 10px;
         background-color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         margin-bottom: 30px;
+        text-align: justify;
     }
 
     .publication h2 {
