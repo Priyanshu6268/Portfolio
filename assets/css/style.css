@@ -363,9 +363,9 @@ header .navbar ul li a:hover {
 .about .row {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  padding: 5rem;
+  padding: 2rem;
 }
 .about .row .image {
   text-align: center;
@@ -462,7 +462,7 @@ header .navbar ul li a:hover {
     margin-bottom: 7rem;
   }
   .about .row .content {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   .about .row .content .box-container {
     gap: 0;
