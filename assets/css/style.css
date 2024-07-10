@@ -363,9 +363,9 @@ header .navbar ul li a:hover {
 .about .row {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 1rem;
 }
 .about .row .image {
   text-align: center;
@@ -400,7 +400,7 @@ header .navbar ul li a:hover {
 }
 .about .row .content p {
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.rem;
   font-family: "Nunito";
   font-weight: 600;
   text-transform: none;
@@ -408,10 +408,10 @@ header .navbar ul li a:hover {
 .about .row .content .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.1rem;
   font-family: "Nunito";
   font-weight: 600;
-    padding: 5px 5px;
+    padding: 4px 4px;
 }
 .about .row .content .box-container .box p {
   text-transform: none;
