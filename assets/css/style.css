@@ -1194,13 +1194,13 @@ header .navbar ul li a:hover {
     }
 
     .special-section .project-highlight {
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
     .special-section .achievement {
-        margin-bottom: 15px;
-        padding: 15px;
-        border-radius: 15px;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
         transition: transform 0.3s;
     }
 
