@@ -1314,7 +1314,7 @@ header .navbar ul li a:hover {
     }
 
     .special-section .hackathon-info ul li::before {
-        content: "âœ”ï¸";
+        content: "✔️";
         margin-right: 10px;
         color: #004d40;
     }
