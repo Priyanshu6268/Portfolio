@@ -468,6 +468,110 @@ header .navbar ul li a:hover {
   }
 }
 /* about media queries ends*/
+.about .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about .content .info {
+    border-radius: 15px;
+    padding: 10px 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about .content .info:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about .content .info-1 {
+    font-family: 'Arial', sans-serif;
+    color: #FF5733;
+    background-color: #FFF3E0;
+}
+
+.about .content .info-2 {
+    font-family: 'Courier New', monospace;
+    color: #8E44AD;
+    background-color: #F5EAFB;
+}
+
+.about .content .info-3 {
+    font-family: 'Georgia', serif;
+    color: #3498DB;
+    background-color: #EBF5FB;
+}
+
+.about .content .info-4 {
+    font-family: 'Verdana', sans-serif;
+    color: #27AE60;
+    background-color: #E9F7EF;
+}
+
+.about .content .info-5 {
+    font-family: 'Tahoma', sans-serif;
+    color: #F1C40F;
+    background-color: #FEF9E7;
+}
+
+.about .content .info-6 {
+    font-family: 'Lucida Console', monospace;
+    color: #E74C3C;
+    background-color: #FDEDEC;
+}
+
+.about .content .info-7 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #16A085;
+    background-color: #E8F8F5;
+}
+
+.about .content .info-8 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #2C3E50;
+    background-color: #EBF5FB;
+}
+
+.about .content .info-9 {
+    font-family: 'Impact', Charcoal, sans-serif;
+    color: #D35400;
+    background-color: #FEF5E7;
+}
+
+.about .content .info-10 {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    color: #8E44AD;
+    background-color: #F5EEF8;
+}
+
+.about .content .info-11 {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    color: #2980B9;
+    background-color: #EBF5FB;
+}
+
+.about .content .info-12 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #27AE60;
+    background-color: #E9F7EF;
+}
+
+.about .content .info-13 {
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    color: #F39C12;
+    background-color: #FEF9E7;
+}
+
+.about .content .info a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.about .content .info a:hover {
+    text-decoration: underline;
+}
 /* about section ends */
 
 /* skills section starts */
