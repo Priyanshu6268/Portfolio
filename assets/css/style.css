@@ -419,7 +419,7 @@ header .navbar ul li a:hover {
   color: #011aff;
 }
 .resumebtn {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 .resumebtn .btn {
   padding: 1.7rem 2rem;
@@ -473,7 +473,7 @@ header .navbar ul li a:hover {
 .about .content .title {
     font-family: 'Playfair Display', serif;
     font-size: 2em;
-    color: #2C3E50;
+    color: #e67e22;
     text-align: center;
     margin-bottom: 5px;
 }
@@ -481,7 +481,7 @@ header .navbar ul li a:hover {
 .about .content .tag {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;
-    color: #2980B9;
+    color: #2980b9;
     text-align: center;
     display: block;
     margin-bottom: 8px;
@@ -494,7 +494,7 @@ header .navbar ul li a:hover {
 
 .about .content .info {
     border-radius: 5px;
-    padding: 3px 3px;
+    padding: 2px 2px;
     transition: transform 0.3s, box-shadow 0.3s, font-size 0.3s;
     font-size: 1em;
     text-align:justify;
