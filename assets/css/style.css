@@ -365,7 +365,7 @@ header .navbar ul li a:hover {
   flex-direction: row;
   gap: 2rem;
   flex-wrap: wrap;
-  padding: 4rem;
+  padding: 2rem;
 }
 .about .row .image {
   text-align: center;
@@ -419,10 +419,10 @@ header .navbar ul li a:hover {
   color: #011aff;
 }
 .resumebtn {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 .resumebtn .btn {
-  padding: 1.7rem 3rem;
+  padding: 1.7rem 2rem;
   border-radius: 0.5em;
   transition: 0.3s;
   color: #fff;
