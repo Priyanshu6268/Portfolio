@@ -471,7 +471,22 @@ header .navbar ul li a:hover {
 /* about media queries ends*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Pacifico&family=Fira+Sans:wght@300;400;500&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+.about .content .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
+.about .content .tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    color: #2980B9;
+    text-align: center;
+    display: block;
+    margin-bottom: 14px;
+}
 .about .content-container {
     display: flex;
     flex-direction: column;
