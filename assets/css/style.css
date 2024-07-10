@@ -474,12 +474,12 @@ header .navbar ul li a:hover {
 .about .content-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
 }
 
 .about .content .info {
-    border-radius: 10px;
-    padding: 8px 10px;
+    border-radius: 5px;
+    padding: 5px 5px;
     transition: transform 0.3s, box-shadow 0.3s, font-size 0.3s;
     font-size: 1em;
     text-align:justify;
@@ -487,8 +487,8 @@ header .navbar ul li a:hover {
 
 .about .content .info:hover {
     transform: scale(1.1);
-    font-size: 1.1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .about .content .info-1 {
