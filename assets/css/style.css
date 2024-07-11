@@ -177,6 +177,42 @@ header .navbar ul li a:hover {
 }
 
 /* Media Queries for Responsiveness ends */
+#menu {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.navbar.active ul {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.7rem 5%;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul li {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+  }
+}
 
 /* navbar ends */
 .leetcode-icon {
