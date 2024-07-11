@@ -122,6 +122,62 @@ header .navbar ul li a:hover {
   border-bottom: 0.2rem solid #011aff;
   padding: 0.5rem 0;
 }
+
+/* Media Queries for Responsiveness starts */
+@media (max-width: 768px) {
+  header {
+    padding: 1.7rem 5%;
+  }
+
+  header .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .navbar li {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  header .navbar ul li a {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 3rem;
+  }
+
+  header .logo {
+    font-size: 1.7rem;
+  }
+
+  header .navbar ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    padding: 1.5rem 3%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  header .navbar ul {
+    align-items: center;
+  }
+
+  header .navbar ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries for Responsiveness ends */
+
 /* navbar ends */
 .leetcode-icon {
   background-image: url("https://icons8.com/icon/wDGo581Ea5Nf/level-up-your-coding-skills-and-quickly-land-a-job");
