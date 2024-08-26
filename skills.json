@@ -70,17 +70,7 @@
         "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
     },  
     {
-        "name":"Docker",
-        "icon":"https://img.icons8.com/fluency/48/docker.png"
-    },
-    {
         "name": "MS Office",
         "icon":"https://img.icons8.com/office/48/microsoft-365.png" 
-    },
-    {
-        "name":"Photoshop",
-        "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
     }
-    
-
 ]
