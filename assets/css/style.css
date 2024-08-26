@@ -561,6 +561,8 @@ header .navbar ul li a:hover {
 }
 /* about media queries ends*/
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Pacifico&family=Fira+Sans:wght@300;400;500&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
 .about .content .title {
     font-family: 'Playfair Display', serif;
@@ -578,6 +580,24 @@ header .navbar ul li a:hover {
     display: block;
     margin-bottom: 8px;
 }
+
+
+
+.content-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title, .tag {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+
+
 .about .content-container {
     display: flex;
     flex-direction: column;
