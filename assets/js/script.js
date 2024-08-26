@@ -163,6 +163,47 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 // <!-- tilt js effect ends -->
 
 
+
+// Function to generate a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to apply random colors to each letter within a specific container
+function applyDynamicColorsToContainer(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Get all child elements of the container
+    const elements = container.querySelectorAll('.title, .tag');
+
+    elements.forEach(element => {
+        const text = element.innerText;
+        element.innerHTML = ''; // Clear current content
+
+        // Wrap each letter in a span with a random color
+        for (let letter of text) {
+            const span = document.createElement('span');
+            span.style.color = getRandomColor();
+            span.textContent = letter;
+            element.appendChild(span);
+        }
+    });
+}
+
+// Apply dynamic colors to the elements inside a specific container
+window.onload = () => {
+    applyDynamicColorsToContainer('dynamic-color-container');
+};
+
+
+
+
 // pre loader start
 // function loader() {
 //     document.querySelector('.loader-container').classList.add('fade-out');
