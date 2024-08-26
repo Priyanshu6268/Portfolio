@@ -163,7 +163,6 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 // <!-- tilt js effect ends -->
 
 
-
 // Function to generate a random color
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
@@ -174,25 +173,26 @@ function getRandomColor() {
     return color;
 }
 
-// Function to apply random colors to each letter within a specific container
+// Function to apply random colors to each word within a specific container
 function applyDynamicColorsToContainer(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     // Get all child elements of the container
-    const elements = container.querySelectorAll('.title, .tag');
+    const elements = container.querySelectorAll('.title, .tag, .info');
 
     elements.forEach(element => {
         const text = element.innerText;
+        const words = text.split(' '); // Split text into words
         element.innerHTML = ''; // Clear current content
 
-        // Wrap each letter in a span with a random color
-        for (let letter of text) {
+        // Wrap each word in a span with a random color
+        words.forEach(word => {
             const span = document.createElement('span');
             span.style.color = getRandomColor();
-            span.textContent = letter;
+            span.textContent = word + ' '; // Add space after each word
             element.appendChild(span);
-        }
+        });
     });
 }
 
@@ -200,6 +200,7 @@ function applyDynamicColorsToContainer(containerId) {
 window.onload = () => {
     applyDynamicColorsToContainer('dynamic-color-container');
 };
+
 
 
 
