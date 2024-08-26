@@ -174,28 +174,35 @@ function getRandomColor() {
     return color;
 }
 
-// Function to apply random colors to each word group within a specific container
+// Function to apply random colors to each specified phrase within a specific container
 function applyDynamicColorsToContainer(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Define word groups to be colored separately
+    // Define specific phrases you want to color separately
     const elements = container.querySelectorAll('.title, .tag');
 
     elements.forEach(element => {
         const text = element.innerText;
 
-        // Define specific phrases or word groups you want to color
-        const wordGroups = text.split(',').join('').split(' & ').join(',').split(' '); // Split text into word groups
+        // Define specific phrases or word groups to be colored
+        const wordGroups = [
+            "I'm",
+            "Priyanshu",
+            "Data Analyst",
+            "&",
+            "Machine Learning Engineer"
+        ];
 
         element.innerHTML = ''; // Clear current content
 
-        // Wrap each word group in a span with a random color
         wordGroups.forEach(group => {
-            const span = document.createElement('span');
-            span.style.color = getRandomColor();
-            span.textContent = group + ' '; // Add space after each word group
-            element.appendChild(span);
+            if (text.includes(group)) {
+                const span = document.createElement('span');
+                span.style.color = getRandomColor();
+                span.textContent = group + ' '; // Add space after each group
+                element.appendChild(span);
+            }
         });
     });
 }
@@ -204,6 +211,7 @@ function applyDynamicColorsToContainer(containerId) {
 window.onload = () => {
     applyDynamicColorsToContainer('dynamic-color-container');
 };
+
 
 
 
