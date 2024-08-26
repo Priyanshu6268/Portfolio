@@ -30,10 +30,6 @@
         "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg"
     },
     {
-        "name":"Jupyter Notebook",
-        "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
-    },
-    {
         "name":"Pandas",
         "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg"
     },
@@ -42,33 +38,13 @@
         "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-plain-wordmark.svg"
     },
     {
-        "name":"Streamlit",
-        "icon":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original-wordmark.svg"
-    },
-    {
-        "name": "GitHub",
-        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
-    },
-    {
         "name":"Excel",
         "icon":"https://img.icons8.com/officexs/48/ms-excel.png"
     },
     {
         "name": "HTML5",
         "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
-    },
-    {
-        "name": "CSS3",
-        "icon": "https://img.icons8.com/color/48/000000/css3.png"
-    },
-    {
-        "name": "JavaScript",
-        "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-    },
-    {
-        "name": "Java",
-        "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
-    },  
+    }, 
     {
         "name": "MS Office",
         "icon":"https://img.icons8.com/office/48/microsoft-365.png" 
