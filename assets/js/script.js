@@ -163,6 +163,7 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 // <!-- tilt js effect ends -->
 
 
+
 // Function to generate a random color
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
@@ -173,24 +174,27 @@ function getRandomColor() {
     return color;
 }
 
-// Function to apply random colors to each word within a specific container
+// Function to apply random colors to each word group within a specific container
 function applyDynamicColorsToContainer(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Get all child elements of the container
-    const elements = container.querySelectorAll('.title, .tag, .info');
+    // Define word groups to be colored separately
+    const elements = container.querySelectorAll('.title, .tag');
 
     elements.forEach(element => {
         const text = element.innerText;
-        const words = text.split(' '); // Split text into words
+
+        // Define specific phrases or word groups you want to color
+        const wordGroups = text.split(',').join('').split(' & ').join(',').split(' '); // Split text into word groups
+
         element.innerHTML = ''; // Clear current content
 
-        // Wrap each word in a span with a random color
-        words.forEach(word => {
+        // Wrap each word group in a span with a random color
+        wordGroups.forEach(group => {
             const span = document.createElement('span');
             span.style.color = getRandomColor();
-            span.textContent = word + ' '; // Add space after each word
+            span.textContent = group + ' '; // Add space after each word group
             element.appendChild(span);
         });
     });
@@ -200,6 +204,7 @@ function applyDynamicColorsToContainer(containerId) {
 window.onload = () => {
     applyDynamicColorsToContainer('dynamic-color-container');
 };
+
 
 
 
