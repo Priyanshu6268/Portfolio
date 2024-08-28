@@ -1248,6 +1248,71 @@ header .navbar ul li a:hover {
   }
   }
   /* achievements  media queries ends*/
+
+
+
+/* Base styles for the Achievements section */
+.achievements {
+    padding: 20px;
+    text-align: center;
+}
+
+.achievements .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.achievements .image-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievements .tilt {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.achievements .tilt:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .achievements .tilt {
+        width: 45%; /* Two images per row on medium-sized screens */
+        margin: 5px;
+    }
+
+    .achievements .row {
+        justify-content: space-around; /* Center images with space around */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .achievements .tilt {
+        width: 90%; /* One image per row on small screens */
+        margin: 10px 0;
+    }
+
+    .achievements .row {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
        
     .special-section {
         font-family: 'Poppins', sans-serif;
