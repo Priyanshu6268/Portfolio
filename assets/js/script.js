@@ -216,66 +216,6 @@ window.onload = () => {
 
 
 
-// For certifications
-// List of PDF files
-const pdfFiles = [
-    './assets/Certifications/Priyanshu Kumar Saw_Chandigarh University.pdf',
-    './assets/Certifications/Oracle.pdf',
-    './assets/Certifications/AMCAT BA.pdf',
-    './assets/Certifications/AMCAT SD.pdf',
-    './assets/Certifications/AMCAT Software engineer.pdf',
-    './assets/Certifications/AMCAT Business Consultant.pdf',
-    './assets/Certifications/Python for Data Science.pdf',
-    './assets/Certifications/Advanced Machine Learning on Google Cloud.pdf',
-    './assets/Certifications/Coursera CEUYC59EDUDP.pdf',
-    './assets/Certifications/Coursera PY9AGVTM4N6Q.pdf',
-    './assets/Certifications/Coursera C549YQP2YSTN-merged.pdf',
-    './assets/Certifications/Coursera G92PLSB33ZS3.pdf'
-];
-
-// Configure pdf.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
-
-const pdfContainer = document.querySelector('.pdf-container');
-
-// Function to render each PDF
-const renderPDF = (url, container) => {
-    const loadingTask = pdfjsLib.getDocument(url);
-
-    loadingTask.promise.then(pdfDoc => {
-        // Render the first page
-        pdfDoc.getPage(1).then(page => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const viewport = page.getViewport({ scale: 1.0 });
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-
-            // Render PDF page into canvas context
-            const renderContext = {
-                canvasContext: ctx,
-                viewport: viewport
-            };
-
-            page.render(renderContext);
-            container.appendChild(canvas);
-        });
-    }).catch(error => {
-        console.error('Error rendering PDF:', error);
-        const errorMsg = document.createElement('p');
-        errorMsg.textContent = 'Error loading PDF.';
-        container.appendChild(errorMsg);
-    });
-};
-
-// Load and display all PDFs
-pdfFiles.forEach(pdfFile => {
-    const pdfViewer = document.createElement('div');
-    pdfViewer.classList.add('pdf-viewer');
-    pdfContainer.appendChild(pdfViewer);
-
-    renderPDF(pdfFile, pdfViewer);
-});
 
 
 
