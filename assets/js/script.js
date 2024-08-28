@@ -213,6 +213,60 @@ window.onload = () => {
 };
 
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const pdfFiles = [
+    './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
+    './assets/Certifications/Oracle.pdf',
+    './assets/Certifications/AMCAT_BA.pdf',
+    './assets/Certifications/AMCAT_SD.pdf',
+    './assets/Certifications/AMCAT_Software_engineer.pdf',
+    './assets/Certifications/AMCAT_Business_Consultant.pdf',
+    './assets/Certifications/Python_for_Data_Science.pdf',
+    './assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf',
+    './assets/Certifications/Coursera_CEUYC59EDUDP.pdf',
+    './assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf'
+    // Add more PDF URLs here if needed
+  ];
+
+  // Function to render a single PDF file
+  function renderPDF(pdfURL, canvasId) {
+    pdfjsLib.getDocument(pdfURL).promise.then((pdf) => {
+      // Fetch the first page
+      pdf.getPage(1).then((page) => {
+        const canvas = document.getElementById(canvasId);
+        const context = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: 1.5 }); // Scale for better quality
+
+        // Set canvas dimensions
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        // Render the page into the canvas
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+    });
+  }
+
+  // Loop through each PDF file and render it in its respective canvas
+  pdfFiles.forEach((pdfFile, index) => {
+    const canvasId = `pdf-canvas${index + 1}`;
+    renderPDF(pdfFile, canvasId);
+  });
+});
+
+
+
+
+
+
 // pre loader start
 // function loader() {
 //     document.querySelector('.loader-container').classList.add('fade-out');
