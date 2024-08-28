@@ -229,33 +229,36 @@ document.addEventListener("DOMContentLoaded", function () {
     './assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf',
     './assets/Certifications/Coursera_CEUYC59EDUDP.pdf',
     './assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf'
-    // Add more PDF URLs here if needed
   ];
 
-  // Function to render a single PDF file
   function renderPDF(pdfURL, canvasId) {
-    pdfjsLib.getDocument(pdfURL).promise.then((pdf) => {
-      // Fetch the first page
-      pdf.getPage(1).then((page) => {
-        const canvas = document.getElementById(canvasId);
-        const context = canvas.getContext('2d');
-        const viewport = page.getViewport({ scale: 1.5 }); // Scale for better quality
+    pdfjsLib.getDocument(pdfURL).promise
+      .then((pdf) => {
+        // Fetch the first page
+        pdf.getPage(1).then((page) => {
+          const canvas = document.getElementById(canvasId);
+          const context = canvas.getContext('2d');
+          const viewport = page.getViewport({ scale: 1.5 });
 
-        // Set canvas dimensions
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
+          // Set canvas dimensions
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
 
-        // Render the page into the canvas
-        const renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        page.render(renderContext);
+          // Render the page into the canvas
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+        }).catch((error) => {
+          console.error(`Error rendering page of ${pdfURL}:`, error);
+        });
+      })
+      .catch((error) => {
+        console.error(`Error loading ${pdfURL}:`, error);
       });
-    });
   }
 
-  // Loop through each PDF file and render it in its respective canvas
   pdfFiles.forEach((pdfFile, index) => {
     const canvasId = `pdf-canvas${index + 1}`;
     renderPDF(pdfFile, canvasId);
