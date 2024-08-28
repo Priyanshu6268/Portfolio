@@ -1407,6 +1407,30 @@ header .navbar ul li a:hover {
   margin: 0 15px; /* Adjust this margin value as needed */
 }
 
+/* Base styles for certification section */
+.certifications {
+  padding: 20px;
+  text-align: center;
+}
+
+.certifications .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.certifications .pdf-container {
+  width: 100%;
+}
+
+.certifications .pdf-embed {
+  width: 45%;
+  height: 500px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 768px) {
   .certifications .pdf-embed {
@@ -1419,6 +1443,7 @@ header .navbar ul li a:hover {
     align-items: center;
   }
 }
+
 
 /* contact section starts */
 .contact {
