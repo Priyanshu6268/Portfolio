@@ -1467,11 +1467,17 @@ header .navbar ul li a:hover {
 
  /* research */
 
-.pdf-container .row {
+/* .pdf-container .row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-}
+} */
+
+
+
+
+
+
 
 /* .pdf-embed {
   width: 550px;
@@ -1564,6 +1570,25 @@ header .navbar ul li a:hover {
 
 
 
+.resume {
+    padding: 20px;
+    text-align: center;
+}
+
+.resume-iframe {
+    width: 100%;
+    max-width: 800px; /* Max width for larger screens */
+    height: 600px; /* Default height */
+    border: none;
+    margin: 0 auto; /* Center the iframe horizontally */
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .resume-iframe {
+        height: 80vh; /* Use 80% of the viewport height for mobile */
+    }
+}
 
 
 
