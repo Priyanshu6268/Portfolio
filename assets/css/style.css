@@ -1574,21 +1574,21 @@ header .navbar ul li a:hover {
     padding: 20px;
     text-align: center;
 }
-
-.resume-iframe {
+.pdf-container {
     width: 100%;
-    max-width: 800px; /* Max width for larger screens */
-    height: 600px; /* Default height */
-    border: none;
-    margin: 0 auto; /* Center the iframe horizontally */
+    height: 80vh; /* Use a percentage of viewport height for mobile */
+    overflow-y: auto; /* Allow vertical scrolling */
+    border: 1px solid #ccc;
+    margin: 0 auto; /* Center container horizontally */
 }
 
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 768px) {
-    .resume-iframe {
-        height: 80vh; /* Use 80% of the viewport height for mobile */
+    .pdf-container {
+        height: 80vh; /* Adjust container height for mobile devices */
     }
 }
+
 
 
 
