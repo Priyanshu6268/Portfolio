@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const pdfFiles = [
         './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
         './assets/Certifications/Oracle.pdf',
-        './assets/Certifications/AMCAT_BA.pdf',
+        './assets/Certifications/certificatemerged.pdf',
         './assets/Certifications/AMCAT_SD.pdf',
         './assets/Certifications/AMCAT_Software_engineer.pdf',
         './assets/Certifications/AMCAT_Business_Consultant.pdf',
