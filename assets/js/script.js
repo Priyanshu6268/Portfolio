@@ -219,7 +219,7 @@ window.onload = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const pdfFiles = [
-    './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
+    './assets/Certifications/certificate.pdf',
     './assets/Certifications/Oracle.pdf',
     './assets/Certifications/AMCAT_BA.pdf',
     './assets/Certifications/AMCAT_SD.pdf',
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
     './assets/Certifications/Python_for_Data_Science.pdf',
     './assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf',
     './assets/Certifications/Coursera_CEUYC59EDUDP.pdf',
-    './assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf'
+    './assets/Certifications/Coursera'
   ];
 
   function renderPDF(pdfURL, canvasId) {
