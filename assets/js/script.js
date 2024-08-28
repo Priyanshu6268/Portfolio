@@ -216,6 +216,121 @@ window.onload = () => {
 
 
 
+// For certifications
+// List of PDF files
+const pdfFiles = [
+    './assets/Certifications/Priyanshu Kumar Saw_Chandigarh University.pdf',
+    './assets/Certifications/Oracle.pdf',
+    './assets/Certifications/AMCAT BA.pdf',
+    './assets/Certifications/AMCAT SD.pdf',
+    './assets/Certifications/AMCAT Software engineer.pdf',
+    './assets/Certifications/AMCAT Business Consultant.pdf',
+    './assets/Certifications/Python for Data Science.pdf',
+    './assets/Certifications/Advanced Machine Learning on Google Cloud.pdf',
+    './assets/Certifications/Coursera CEUYC59EDUDP.pdf',
+    './assets/Certifications/Coursera PY9AGVTM4N6Q.pdf',
+    './assets/Certifications/Coursera C549YQP2YSTN-merged.pdf',
+    './assets/Certifications/Coursera G92PLSB33ZS3.pdf'
+];
+
+let pdfDoc = null,
+    currentPage = 1,
+    pageIsRendering = false,
+    pageNumIsPending = null,
+    pdfIndex = 0; // Current PDF index
+
+const canvas = document.getElementById('pdf-render'),
+    ctx = canvas.getContext('2d'),
+    pageNum = document.getElementById('page-num'),
+    pageCount = document.getElementById('page-count');
+
+// Configure pdf.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
+
+// Render the page
+const renderPage = num => {
+    pageIsRendering = true;
+
+    // Get the page
+    pdfDoc.getPage(num).then(page => {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderCtx = {
+            canvasContext: ctx,
+            viewport
+        };
+
+        const renderTask = page.render(renderCtx);
+
+        renderTask.promise.then(() => {
+            pageIsRendering = false;
+
+            if (pageNumIsPending !== null) {
+                renderPage(pageNumIsPending);
+                pageNumIsPending = null;
+            }
+        });
+
+        // Output current page
+        pageNum.textContent = num;
+    });
+};
+
+// Queue the page rendering
+const queueRenderPage = num => {
+    if (pageIsRendering) {
+        pageNumIsPending = num;
+    } else {
+        renderPage(num);
+    }
+};
+
+// Show Previous Page
+const showPrevPage = () => {
+    if (currentPage <= 1) {
+        pdfIndex = (pdfIndex - 1 + pdfFiles.length) % pdfFiles.length; // Go to previous PDF
+        loadPDF(pdfFiles[pdfIndex]);
+        return;
+    }
+    currentPage--;
+    queueRenderPage(currentPage);
+};
+
+// Show Next Page
+const showNextPage = () => {
+    if (currentPage >= pdfDoc.numPages) {
+        pdfIndex = (pdfIndex + 1) % pdfFiles.length; // Go to next PDF
+        loadPDF(pdfFiles[pdfIndex]);
+        return;
+    }
+    currentPage++;
+    queueRenderPage(currentPage);
+};
+
+// Load the PDF document
+const loadPDF = (url) => {
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+        pageCount.textContent = pdfDoc.numPages;
+        currentPage = 1;
+        renderPage(currentPage);
+    }).catch(err => {
+        console.error('Error loading PDF: ', err);
+        canvas.innerHTML = '<p>Failed to load PDF.</p>';
+    });
+};
+
+// Event listeners
+document.getElementById('prev').addEventListener('click', showPrevPage);
+document.getElementById('next').addEventListener('click', showNextPage);
+
+// Load the first PDF initially
+loadPDF(pdfFiles[pdfIndex]);
+
+
+
 
 
 // pre loader start
