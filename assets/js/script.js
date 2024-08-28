@@ -217,54 +217,7 @@ window.onload = () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const pdfFiles = [
-        './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
-        './assets/Certifications/Oracle.pdf',
-        './assets/Certifications/AMCAT_BA.pdf',
-        './assets/Certifications/AMCAT_SD.pdf',
-        './assets/Certifications/AMCAT_Software_engineer.pdf',
-        './assets/Certifications/AMCAT_Business_Consultant.pdf',
-        './assets/Certifications/Python_for_Data_Science.pdf',
-        './assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf',
-        './assets/Certifications/Coursera_CEUYC59EDUDP.pdf',
-        './assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf'
-    ];
 
-    // Function to render PDFs using pdf.js
-    function renderPDF(pdfURL, containerId) {
-        pdfjsLib.getDocument(pdfURL).promise.then((pdf) => {
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                pdf.getPage(pageNum).then((page) => {
-                    const viewport = page.getViewport({ scale: 1.0 });
-                    const canvas = document.createElement('canvas');
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-
-                    const context = canvas.getContext('2d');
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    
-                    page.render(renderContext).then(function() {
-                        document.getElementById(containerId).appendChild(canvas);
-                    });
-                }).catch((error) => {
-                    console.error(`Error rendering page ${pageNum} of ${pdfURL}:`, error);
-                });
-            }
-        }).catch((error) => {
-            console.error(`Error loading ${pdfURL}:`, error);
-        });
-    }
-
-    // Loop through each PDF file and render it
-    pdfFiles.forEach((pdfFile, index) => {
-        const containerId = `pdf-viewer${index + 1}`;
-        renderPDF(pdfFile, containerId);
-    });
-});
 
 
 
