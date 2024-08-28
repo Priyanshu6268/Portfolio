@@ -233,101 +233,49 @@ const pdfFiles = [
     './assets/Certifications/Coursera G92PLSB33ZS3.pdf'
 ];
 
-let pdfDoc = null,
-    currentPage = 1,
-    pageIsRendering = false,
-    pageNumIsPending = null,
-    pdfIndex = 0; // Current PDF index
-
-const canvas = document.getElementById('pdf-render'),
-    ctx = canvas.getContext('2d'),
-    pageNum = document.getElementById('page-num'),
-    pageCount = document.getElementById('page-count');
-
 // Configure pdf.js worker
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
 
-// Render the page
-const renderPage = num => {
-    pageIsRendering = true;
+const pdfContainer = document.querySelector('.pdf-container');
 
-    // Get the page
-    pdfDoc.getPage(num).then(page => {
-        const viewport = page.getViewport({ scale: 1.5 });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+// Function to render each PDF
+const renderPDF = (url, container) => {
+    const loadingTask = pdfjsLib.getDocument(url);
 
-        const renderCtx = {
-            canvasContext: ctx,
-            viewport
-        };
+    loadingTask.promise.then(pdfDoc => {
+        // Render the first page
+        pdfDoc.getPage(1).then(page => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const viewport = page.getViewport({ scale: 1.0 });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
 
-        const renderTask = page.render(renderCtx);
+            // Render PDF page into canvas context
+            const renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
 
-        renderTask.promise.then(() => {
-            pageIsRendering = false;
-
-            if (pageNumIsPending !== null) {
-                renderPage(pageNumIsPending);
-                pageNumIsPending = null;
-            }
+            page.render(renderContext);
+            container.appendChild(canvas);
         });
-
-        // Output current page
-        pageNum.textContent = num;
+    }).catch(error => {
+        console.error('Error rendering PDF:', error);
+        const errorMsg = document.createElement('p');
+        errorMsg.textContent = 'Error loading PDF.';
+        container.appendChild(errorMsg);
     });
 };
 
-// Queue the page rendering
-const queueRenderPage = num => {
-    if (pageIsRendering) {
-        pageNumIsPending = num;
-    } else {
-        renderPage(num);
-    }
-};
+// Load and display all PDFs
+pdfFiles.forEach(pdfFile => {
+    const pdfViewer = document.createElement('div');
+    pdfViewer.classList.add('pdf-viewer');
+    pdfContainer.appendChild(pdfViewer);
 
-// Show Previous Page
-const showPrevPage = () => {
-    if (currentPage <= 1) {
-        pdfIndex = (pdfIndex - 1 + pdfFiles.length) % pdfFiles.length; // Go to previous PDF
-        loadPDF(pdfFiles[pdfIndex]);
-        return;
-    }
-    currentPage--;
-    queueRenderPage(currentPage);
-};
-
-// Show Next Page
-const showNextPage = () => {
-    if (currentPage >= pdfDoc.numPages) {
-        pdfIndex = (pdfIndex + 1) % pdfFiles.length; // Go to next PDF
-        loadPDF(pdfFiles[pdfIndex]);
-        return;
-    }
-    currentPage++;
-    queueRenderPage(currentPage);
-};
-
-// Load the PDF document
-const loadPDF = (url) => {
-    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-        pdfDoc = pdfDoc_;
-        pageCount.textContent = pdfDoc.numPages;
-        currentPage = 1;
-        renderPage(currentPage);
-    }).catch(err => {
-        console.error('Error loading PDF: ', err);
-        canvas.innerHTML = '<p>Failed to load PDF.</p>';
-    });
-};
-
-// Event listeners
-document.getElementById('prev').addEventListener('click', showPrevPage);
-document.getElementById('next').addEventListener('click', showNextPage);
-
-// Load the first PDF initially
-loadPDF(pdfFiles[pdfIndex]);
+    renderPDF(pdfFile, pdfViewer);
+});
 
 
 
