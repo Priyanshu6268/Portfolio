@@ -219,6 +219,36 @@ window.onload = () => {
 
 
 
+// script.js
+
+// Select the theme switch checkbox
+const themeSwitch = document.getElementById('theme-switch');
+
+// Check localStorage for the user's theme preference
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeSwitch.checked = true;
+}
+
+// Listen for changes on the checkbox
+themeSwitch.addEventListener('change', () => {
+    if (themeSwitch.checked) {
+        // Add dark theme
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        // Remove dark theme
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+
+
+
+
+
 
 
 // pre loader start
