@@ -218,50 +218,48 @@ window.onload = () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const pdfFiles = [
-    encodeURI('./assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf'),
-    encodeURI('./assets/Certifications/Oracle.pdf'),
-    encodeURI('./assets/Certifications/AMCAT_BA.pdf'),
-    encodeURI('./assets/Certifications/AMCAT_SD.pdf'),
-    encodeURI('./assets/Certifications/AMCAT_Software_engineer.pdf'),
-    encodeURI('./assets/Certifications/AMCAT_Business_Consultant.pdf'),
-    encodeURI('./assets/Certifications/Python_for_Data_Science.pdf'),
-    encodeURI('./assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf'),
-    encodeURI('./assets/Certifications/Coursera_CEUYC59EDUDP.pdf'),
-    encodeURI('./assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf')
-  ];
+    const pdfFiles = [
+        './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
+        './assets/Certifications/Oracle.pdf',
+        './assets/Certifications/AMCAT_BA.pdf',
+        './assets/Certifications/AMCAT_SD.pdf',
+        './assets/Certifications/AMCAT_Software_engineer.pdf',
+        './assets/Certifications/AMCAT_Business_Consultant.pdf',
+        './assets/Certifications/Python_for_Data_Science.pdf',
+        './assets/Certifications/Advanced_Machine_Learning_on_Google_Cloud.pdf',
+        './assets/Certifications/Coursera_CEUYC59EDUDP.pdf',
+        './assets/Certifications/Coursera_PY9AGVTM4N6Q.pdf'
+    ];
 
-  // Function to render PDFs
-  function renderPDF(pdfURL, canvasId) {
-    pdfjsLib.getDocument(pdfURL).promise
-      .then((pdf) => {
-        pdf.getPage(1).then((page) => {
-          const canvas = document.getElementById(canvasId);
-          const context = canvas.getContext('2d');
-          const viewport = page.getViewport({ scale: 1.5 });
+    // Function to render PDFs using pdf.js
+    function renderPDF(pdfURL, canvasId) {
+        pdfjsLib.getDocument(pdfURL).promise.then((pdf) => {
+            pdf.getPage(1).then((page) => {
+                const canvas = document.getElementById(canvasId);
+                const context = canvas.getContext('2d');
+                const viewport = page.getViewport({ scale: 1.0 });
 
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
 
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            }).catch((error) => {
+                console.error(`Error rendering page of ${pdfURL}:`, error);
+            });
         }).catch((error) => {
-          console.error(`Error rendering page of ${pdfURL}:`, error);
+            console.error(`Error loading ${pdfURL}:`, error);
         });
-      })
-      .catch((error) => {
-        console.error(`Error loading ${pdfURL}:`, error);
-      });
-  }
+    }
 
-  // Loop through each PDF file and render it
-  pdfFiles.forEach((pdfFile, index) => {
-    const canvasId = `pdf-canvas${index + 1}`;
-    renderPDF(pdfFile, canvasId);
-  });
+    // Loop through each PDF file and render it
+    pdfFiles.forEach((pdfFile, index) => {
+        const canvasId = `pdf-canvas${index + 1}`;
+        renderPDF(pdfFile, canvasId);
+    });
 });
 
 
