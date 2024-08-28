@@ -1521,7 +1521,7 @@ header .navbar ul li a:hover {
 
 
 
-/* .pdf-embed {
+.pdf-embed {
   width: 550px;  
   height: 450px; 
   margin: 0 15px; 
@@ -1543,9 +1543,9 @@ header .navbar ul li a:hover {
 .certifications .pdf-container {
   width: 100%;
 }
- */
+
 /* Media Queries for Mobile Devices */
-/* @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .certifications .pdf-embed {
     width: 90%; 
     height: auto;
@@ -1555,48 +1555,14 @@ header .navbar ul li a:hover {
     flex-direction: column;
     align-items: center;
   }
-} */
-
-
-
-
-
-
-.pdf-embed {
-    width: 550px;  /* Keeps the original width */
-    height: 450px; /* Keeps the original height */
-    overflow-y: auto;  /* Adds scrolling for overflow */
-    margin: 0 15px;
-    border: 1px solid #ccc;
 }
 
-.certifications {
-    padding: 20px;
-    text-align: center;
-}
 
-.certifications .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-.certifications .pdf-container {
-    width: 100%;
-}
 
-@media only screen and (max-width: 768px) {
-    .certifications .pdf-embed {
-        width: 90%;  /* Adjusts width for mobile */
-        height: auto; /* Height is adjusted based on content */
-    }
 
-    .certifications .row {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+
+
 
 
 
