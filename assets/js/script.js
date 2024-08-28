@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const pdfFiles = [
         './assets/Certifications/Priyanshu_Kumar_Saw_Chandigarh_University.pdf',
         './assets/Certifications/Oracle.pdf',
-        './assets/Certifications/certificatemerged.pdf',
+        './assets/Certifications/AMCAT_BA.pdf',
         './assets/Certifications/AMCAT_SD.pdf',
         './assets/Certifications/AMCAT_Software_engineer.pdf',
         './assets/Certifications/AMCAT_Business_Consultant.pdf',
@@ -232,24 +232,28 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     // Function to render PDFs using pdf.js
-    function renderPDF(pdfURL, canvasId) {
+    function renderPDF(pdfURL, containerId) {
         pdfjsLib.getDocument(pdfURL).promise.then((pdf) => {
-            pdf.getPage(1).then((page) => {
-                const canvas = document.getElementById(canvasId);
-                const context = canvas.getContext('2d');
-                const viewport = page.getViewport({ scale: 1.0 });
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                pdf.getPage(pageNum).then((page) => {
+                    const viewport = page.getViewport({ scale: 1.0 });
+                    const canvas = document.createElement('canvas');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
 
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-                page.render(renderContext);
-            }).catch((error) => {
-                console.error(`Error rendering page of ${pdfURL}:`, error);
-            });
+                    const context = canvas.getContext('2d');
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    
+                    page.render(renderContext).then(function() {
+                        document.getElementById(containerId).appendChild(canvas);
+                    });
+                }).catch((error) => {
+                    console.error(`Error rendering page ${pageNum} of ${pdfURL}:`, error);
+                });
+            }
         }).catch((error) => {
             console.error(`Error loading ${pdfURL}:`, error);
         });
@@ -257,10 +261,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Loop through each PDF file and render it
     pdfFiles.forEach((pdfFile, index) => {
-        const canvasId = `pdf-canvas${index + 1}`;
-        renderPDF(pdfFile, canvasId);
+        const containerId = `pdf-viewer${index + 1}`;
+        renderPDF(pdfFile, containerId);
     });
 });
+
 
 
 
