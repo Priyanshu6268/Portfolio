@@ -215,6 +215,38 @@ window.onload = () => {
 
 
 
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const url = './assets/Priyanshu_Resume_19July.pdf';
+
+    const loadingTask = pdfjsLib.getDocument(url);
+    loadingTask.promise.then(function (pdf) {
+      // Fetch all pages of the PDF
+      const numPages = pdf.numPages;
+      for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+        pdf.getPage(pageNum).then(function (page) {
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          
+          page.render(renderContext).promise.then(function () {
+            document.getElementById('pdf-container').appendChild(canvas);
+          });
+        });
+      }
+    }).catch(function (error) {
+      console.error('Error loading PDF:', error);
+    });
+  });
+</script>
 
 
 
