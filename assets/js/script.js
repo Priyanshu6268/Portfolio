@@ -213,19 +213,6 @@ window.onload = () => {
 };
 
 
-
-
-
-
-
-
-const checkbox = document.getElementById("checkbox")
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark")
-})
-
-
-
 // pre loader start
 // function loader() {
 //     document.querySelector('.loader-container').classList.add('fade-out');
