@@ -22,6 +22,51 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+
+/* styles.css */
+
+/* Default Light Theme Variables */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --toggle-background: #f0f0f0;
+    --toggle-text-color: #333;
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --toggle-background: #333;
+    --toggle-text-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: var(--toggle-background);
+    color: var(--toggle-text-color);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+
+
+
 *::selection {
   background: #2b3dda;
   color: #fff;
