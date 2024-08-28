@@ -1473,14 +1473,14 @@ header .navbar ul li a:hover {
   margin-bottom: 20px;
 }
 
-.pdf-embed {
+/* .pdf-embed {
   width: 550px;
   height: 450px;
-  margin: 0 15px; /* Adjust this margin value as needed */
-}
+  margin: 0 15px;
+} */
 
 /* Base styles for certification section */
-.certifications {
+/* .certifications {
   padding: 20px;
   text-align: center;
 }
@@ -1501,10 +1501,10 @@ header .navbar ul li a:hover {
   height: 500px;
   margin: 10px;
   border: 1px solid #ccc;
-}
+} */
 
 /* Media Queries for Mobile Devices */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .certifications .pdf-embed {
     width: 90%;
     height: 400px;
@@ -1514,7 +1514,51 @@ header .navbar ul li a:hover {
     flex-direction: column;
     align-items: center;
   }
+} */
+
+
+.pdf-embed {
+  width: 550px;  /* Retains the existing width */
+  height: 450px; /* Retains the existing height */
+  margin: 0 15px; /* Keeps the margin as is */
+  border: 1px solid #ccc;
+  overflow: auto; /* Ensures scrolling within the iframe */
 }
+
+.certifications {
+  padding: 20px;
+  text-align: center;
+}
+
+.certifications .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.certifications .pdf-container {
+  width: 100%;
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  .certifications .pdf-embed {
+    width: 90%;  /* Allows full width usage on mobile */
+    height: 400px; /* Adjusts height slightly for mobile view */
+  }
+
+  .certifications .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
 
 /* contact section starts */
 .contact {
