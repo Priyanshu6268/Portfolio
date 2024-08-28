@@ -1518,11 +1518,10 @@ header .navbar ul li a:hover {
 
 
 .pdf-embed {
-  width: 550px;  /* Retains the existing width */
-  height: 450px; /* Retains the existing height */
-  margin: 0 15px; /* Keeps the margin as is */
-  border: 1px solid #ccc;
-  overflow: auto; /* Ensures scrolling within the iframe */
+  width: 100%; /* Make the iframe full width to be responsive */
+  height: 500px; /* Fixed height; can be adjusted as needed */
+  border: none; /* Remove border */
+  overflow: auto; /* Allow scrolling within the iframe */
 }
 
 .certifications {
@@ -1543,9 +1542,8 @@ header .navbar ul li a:hover {
 
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 768px) {
-  .certifications .pdf-embed {
-    width: 90%;  /* Allows full width usage on mobile */
-    height: 400px; /* Adjusts height slightly for mobile view */
+  .pdf-embed {
+    height: 400px; /* Adjust height for mobile view */
   }
 
   .certifications .row {
@@ -1553,6 +1551,7 @@ header .navbar ul li a:hover {
     align-items: center;
   }
 }
+
 
 
 
