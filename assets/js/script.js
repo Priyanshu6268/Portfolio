@@ -212,58 +212,6 @@ window.onload = () => {
     applyDynamicColorsToContainer('dynamic-color-container');
 };
 
-
-
-
-
-
-
-
-
-
-// Include PDF.js library from CDN
-var pdfjsLib = window['pdfjs-dist/build/pdf'];
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
-
-// Function to render PDF
-function renderPDF(url, canvasContainer) {
-    pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
-        var totalPages = pdfDoc.numPages;
-
-        // Loop through each page and render
-        for (var pageNum = 1; pageNum <= totalPages; pageNum++) {
-            pdfDoc.getPage(pageNum).then(function(page) {
-                var viewport = page.getViewport({ scale: 1.0 });
-                var canvas = document.createElement('canvas');
-                canvas.className = 'pdf-page';
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                canvasContainer.appendChild(canvas);
-
-                var context = canvas.getContext('2d');
-                var renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-                page.render(renderContext);
-            });
-        }
-    }).catch(function(error) {
-        console.error('Error rendering PDF:', error);
-    });
-}
-
-// Get all PDF viewer containers
-var pdfViewers = document.querySelectorAll('.pdf-viewer');
-
-pdfViewers.forEach(function(viewer) {
-    var pdfUrl = viewer.getAttribute('data-pdf-url');
-    renderPDF(pdfUrl, viewer);
-});
-
-
-
-
 // pre loader start
 // function loader() {
 //     document.querySelector('.loader-container').classList.add('fade-out');
