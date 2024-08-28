@@ -792,35 +792,6 @@ header .navbar ul li a:hover {
 }
 /* education media queries ends*/
 /* education section ends */
-.coding-profile {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-}
-
-.coding-profile h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.profile-links {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-links a {
-  text-decoration: none;
-  color: #007bff;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.profile-links a:hover {
-  color: #0056b3;
-}
 
 /* work section starts */
 .work {
@@ -1434,6 +1405,19 @@ header .navbar ul li a:hover {
   width: 550px;
   height: 450px;
   margin: 0 15px; /* Adjust this margin value as needed */
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  .certifications .pdf-embed {
+    width: 90%;
+    height: 400px;
+  }
+
+  .certifications .row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* contact section starts */
