@@ -8,6 +8,10 @@
         "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
     },
     {
+        "name": "Generative AI",
+        "icon": "https://img.icons8.com/fluency/48/ai-generated-code.png"
+    },
+    {
         "name":"Tableau",
         "icon":"https://img.icons8.com/color/48/tableau-software.png"
     },
